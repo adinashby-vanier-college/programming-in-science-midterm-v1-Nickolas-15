@@ -25,17 +25,18 @@ def hollow_right_triangle(n):
 
 # Q3: Inverted Pyramid
 def inverted_pyramid(n):
-    while n < 2:
+    while n < 3:
 
-        return "The pyramid height should be at least 3. "
+        return "The pyramid height should be at least 3."
     
     result = ""
     for i in range(n):
         for j in range(n):
-            if i == 0 or i == n - i - j:
-                result += "*"
-            else:
-                result += " "
+            if i == 0:
+                result += "*" * n    # I got the correct number of stars for the first lines
+            else:                    # Pretty sure that there is a j == i - 1 to get the shape of the diagonal spaces
+                result += " "        # Same for the other side, j == n + n - 1 resulting in a " " will give the other side of the triangle 
+                                     # It'll eventually lead to the pyramid where i think where i == ( n * n )/2
         result += "\n"
 
     return result.rstrip()
